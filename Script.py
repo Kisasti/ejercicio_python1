@@ -46,7 +46,14 @@ lonOka, latOka = map(list(specieOka['longitude']), list(specieOka['latitude']))
 # MODIFICABLE
 # Opciones de visualizacion de la especie
 # Muchas mas en: http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot
-map.plot(lon, lat, 'bo', markersize=7, markeredgecolor='none')
+map.drawcoastlines(linewidth=0.9)
+map.drawcountries(linewidth=0.2)
+map.fillcontinents(alpha=0.9)
+map.drawmapboundary()
+map.drawmeridians(np.arange(0, 360, 30), labels=[False, False, False, True], linewidth=0.3)
+map.drawparallels(np.arange(-90, 90, 30), labels=[False, True, False, False], linewidth=0.3)
+map.plot(lonPa, latPa, 'ro', markersize=3.8, markeredgecolor='none')
+map.plot(lonOka, latOka, 'g*', markersize=4.259621, markeredgecolor='none')
 
 # INSTRUCCION
 # Debeis guardar la figura a un archivo pdf
