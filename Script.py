@@ -2,7 +2,7 @@
 """
 Created on Wed Feb 15 19:07:00 2017
 
-@author: usuario
+@author: kisasti
 """
 
 # INSTRUCCION
