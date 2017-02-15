@@ -35,6 +35,9 @@ speciePa =pd. read_csv('Occurrence_Pa.csv' , sep=';',
 header=0, error_bad_lines=False, na_values=' ')
 print(speciePa)
 
+specieOka =pd. read_csv('Occurrence_Oka.csv' , sep=';',
+header=0, error_bad_lines=False, na_values=' ')
+print(specieOka)
 
 # Datos de latitud y longitud de la especie
 lon, lat = map(list(specie['longitude']), list(specie['latitude']))
