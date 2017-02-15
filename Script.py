@@ -52,12 +52,8 @@ map.fillcontinents(alpha=0.9)
 map.drawmapboundary()
 map.drawmeridians(np.arange(0, 360, 30), labels=[False, False, False, True], linewidth=0.3)
 map.drawparallels(np.arange(-90, 90, 30), labels=[False, True, False, False], linewidth=0.3)
-map.plot(lonPa, latPa, 'ro', markersize=3.8, markeredgecolor='none')
-map.plot(lonOka, latOka, 'g*', markersize=4.259621, markeredgecolor='none')
-
-# INSTRUCCION
-# Debeis guardar la figura a un archivo pdf
-map.
-
-# Se muestra el mapa por pantalla
-plt.show()
+map.plot(lonPa, latPa, 'ro', markersize=3.8, markeredgecolor='none', label='Paralichthys olivaceus')
+map.plot(lonOka, latOka, 'g*', markersize=4.259621, markeredgecolor='none', label='Okamejei kenojei')
+plt.legend(loc='lower right', fontsize='small')
+plt.title('Distribution map')
+plt.savefig("distribution_map.pdf")
