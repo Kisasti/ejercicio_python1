@@ -40,7 +40,8 @@ header=0, error_bad_lines=False, na_values=' ')
 print(specieOka)
 
 # Datos de latitud y longitud de la especie
-lon, lat = map(list(specie['longitude']), list(specie['latitude']))
+lonPa, latPa = map(list(speciePa['longitude']), list(speciePa['latitude']))
+lonOka, latOka = map(list(specieOka['longitude']), list(specieOka['latitude']))
 
 # MODIFICABLE
 # Opciones de visualizacion de la especie
