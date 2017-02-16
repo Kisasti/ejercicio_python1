@@ -20,9 +20,9 @@ map = Basemap(projection='mill', resolution='l', llcrnrlon=110, llcrnrlat=10, ur
 # MODIFICABLE
 # Opciones del mapa
 # Muchas mas en: http://matplotlib.org/basemap/api/basemap_api.html#module-mpl_toolkits.basemap
-map.drawcoastlines(linewidth=0.9)
-map.drawcountries(linewidth=0.2)
-map.fillcontinents(alpha=0.9)
+map.drawcoastlines(linewidth=0.9) # Quería que se viera bien donde acaba el continente o el contorno de las islas.
+map.drawcountries(linewidth=0.2) # He considerado que los límites de continentes no son importantes para dos especies aquáticas.
+map.fillcontinents(alpha=0.9) # Quería que se distinguiera bien donde hay "tierra" y donde "agua".
 map.drawmapboundary()
 map.drawmeridians(np.arange(0, 360, 30), labels=[False, False, False, True], linewidth=0.3)
 map.drawparallels(np.arange(-90, 90, 30), labels=[False, True, False, False], linewidth=0.3)
@@ -30,7 +30,10 @@ map.drawparallels(np.arange(-90, 90, 30), labels=[False, True, False, False], li
 # INSTRUCCION
 # Debeis descargaros un fichero csv con un conjunto de registros (records) de una especie
 # desde la pagina del OBIS: http://www.iobis.org y leerla en un DataFrame de pandas
+# las especies que he elegido son Okamejei kenojei (denominado Oka en mis datos) y Paralichthys olivaceus (denominado Pa) porque son presa-depredador.
+# Mi hipótesis es que la distribución de las dos especies debería estar relacionada.
 # Ese DataFrame se debe llamar specie
+
 speciePa =pd. read_csv('Occurrence_Pa.csv' , sep=';',
 header=0, error_bad_lines=False, na_values=' ')
 print(speciePa)
@@ -46,9 +49,9 @@ lonOka, latOka = map(list(specieOka['longitude']), list(specieOka['latitude']))
 # MODIFICABLE
 # Opciones de visualizacion de la especie
 # Muchas mas en: http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot
-map.drawcoastlines(linewidth=0.9)
-map.drawcountries(linewidth=0.2)
-map.fillcontinents(alpha=0.9)
+map.drawcoastlines(linewidth=0.9) # Quería que se viera bien donde acaba el continente o el contorno de las islas.
+map.drawcountries(linewidth=0.2) # He considerado que los límites de continentes no son importantes para dos especies aquáticas.
+map.fillcontinents(alpha=0.9) # Quería que se distinguiera bien donde hay "tierra" y donde "agua".
 map.drawmapboundary()
 map.drawmeridians(np.arange(0, 360, 30), labels=[False, False, False, True], linewidth=0.3)
 map.drawparallels(np.arange(-90, 90, 30), labels=[False, True, False, False], linewidth=0.3)
